@@ -7,13 +7,13 @@ import java.io.IOException;
 
 public class HbaseDemo {
     public static void main(String[] args) throws IOException {
-        System.out.println("极客时间-作业2");
 
         // 建立连接
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum", "127.0.0.1");
         configuration.set("hbase.zookeeper.property.clientPort", "2181");
         configuration.set("hbase.master", "127.0.0.1:60000");
+        System.out.println("HBase is running!");
         Connection conn = ConnectionFactory.createConnection(configuration);
         Admin admin = conn.getAdmin();
 
